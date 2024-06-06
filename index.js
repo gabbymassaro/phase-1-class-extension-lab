@@ -20,14 +20,17 @@ class Polygon {
 class Triangle extends Polygon {
   get isValid() {
     let sides = this.sides
-    if ((sides[0] + sides[1]) > sides[2] && (sides[1] + sides[2]) > sides[0] && (sides[0] + sides[2]) > sides[1]) {
-      return true
-    } else {
-      return false
-    }
+    return((sides[0]+sides[1]) > sides[2] && (sides[1]+sides[2]) > sides[0] && (sides[0]+sides[2]) > sides[1])
   }
 }
 
-let polygon = new Polygon([5, 5, 5])
-let triangle = new Triangle([13, 4, 3])
-triangle.isValid
+class Square extends Polygon {
+  get isValid() {
+    let square = this.perimeter / 4
+    return (Number.isInteger(square))
+  }
+
+  get area() {
+    return (this.sides[0] * this.sides[1])
+  }
+}

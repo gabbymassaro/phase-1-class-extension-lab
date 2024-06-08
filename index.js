@@ -26,8 +26,8 @@ class Triangle extends Polygon {
 
 class Square extends Polygon {
   get isValid() {
-    let square = this.perimeter / 4
-    return (Number.isInteger(square))
+    let sides = this.sides
+    return (sides[0] === sides[1] && sides[0] === sides[2] && sides[0] === sides[3])
   }
 
   get area() {
